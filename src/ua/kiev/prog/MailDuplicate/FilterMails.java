@@ -12,18 +12,6 @@ public class FilterMails extends Thread {
 		this.countMails = countMails;
 	}
 
-	 public static boolean check(char[] ch) {
-	        if (ch[ch.length - 1] == '@') {
-	            for (int i = 0; i < ch.length - 1; i++) {
-	                if (!Character.isDigit(ch[i])) {
-	                    return false;
-	                }
-	            }
-	            return true;
-	        } else {
-	            return false;
-	        }
-	    }
 	
 	@Override
 	public void run() {
