@@ -1,4 +1,4 @@
-package ua.com.qalight;
+package ua.kiev.prog;
 
 import java.util.ArrayList;
 import java.util.Collection;
