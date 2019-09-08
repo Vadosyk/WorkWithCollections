@@ -18,17 +18,17 @@ public class FilterMails extends Thread {
 		super.run();
 		Scanner sc = new Scanner (System.in);
 		HashSet<String> listMails = new HashSet<String>();				
-		System.out.println("Enter list mails - \n");
-		/*while (!sc.hasNext("@")) {
-			System.out.println("That not a mail!");
-			sc.next();
-		}*/
-				
+		System.out.println("Enter list mails - \n");						
 			for (int i = 0; i < countMails; i++) {
 				if (sc.hasNextLine()) {					
 					String count;
 					count = sc.nextLine();
-					listMails.add(count);
+					int sym = count.indexOf("@");
+						if (!(sym == -1)) {
+							listMails.add(count);
+						}else {
+							System.out.println("That not a mail!");
+						}
 					
 				}else {
 					System.out.println("Eror");
@@ -42,14 +42,12 @@ public class FilterMails extends Thread {
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		// TODO Auto-generated method stub
+	public boolean equals(Object obj) {		
 		return super.equals(obj);
 	}
 
 	@Override
 	public int hashCode() {
-		// TODO Auto-generaerted method stub
 		return super.hashCode();
 	}
 	
